@@ -1,0 +1,51 @@
+html,
+body,
+#root {
+	font-family: 'Ysabeau SC', sans-serif;
+	background-color: gray;
+	box-sizing: border-box;
+	display: flex;
+	padding: 0px;
+	height: 100%;
+	margin: 0px;
+	width: 100%;
+	overflow: hidden;
+
+	> div {
+		overflow-y: auto;
+		padding: 20px;
+		height: 100%;
+		flex: 1;
+	}
+
+	> .NavTreeContainer {
+		background-color: slateblue;
+		overflow: hidden;
+		max-width: 15%;
+		color: black;
+		padding: 0px;
+
+		ul {
+			justify-content: space-evenly;
+			flex-direction: column;
+			align-items: center;
+			position: relative;
+			display: flex;
+			padding: 0px;
+			height: 70%;
+			width: 100%;
+
+			li {
+				list-style: none;
+				color: white;
+
+				&:hover {
+					text-shadow: 2px 2px 2px black;
+					font-weight: 600;
+					cursor: pointer;
+					color: salmon;
+				}
+			}
+		}
+	}
+}
