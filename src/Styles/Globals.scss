@@ -39,7 +39,8 @@ body,
 				list-style: none;
 				color: white;
 
-				&:hover {
+				&:hover,
+				&.active {
 					text-shadow: 2px 2px 2px black;
 					font-weight: 600;
 					cursor: pointer;

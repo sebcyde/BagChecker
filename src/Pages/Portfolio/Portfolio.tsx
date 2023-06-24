@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NavTree from '../../Components/NavTree/NavTree';
+import LoadingScreen from '../Loading/LoadingScreen';
 
 type Props = {};
 
 const Portfolio = (props: Props) => {
+	const [Loading, setLoading] = useState<boolean>(true);
+
 	return (
 		<>
 			<NavTree />
-			<div>Portfolio</div>;
+			{Loading ? (
+				<LoadingScreen />
+			) : (
+				<>
+					<div>Portfolio</div>;
+				</>
+			)}
 		</>
 	);
 };
