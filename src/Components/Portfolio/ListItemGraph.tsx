@@ -1,4 +1,6 @@
+import { useDispatch } from 'react-redux';
 import { parsePercentages } from '../../Functions/Stocks/ParsePercentages';
+import { setCurrentStoreStock } from '../../Store/Slices/StockSlice';
 import { FHStockQuoteType } from '../../Types/Stocks/Finhhub';
 
 type Props = {
@@ -7,8 +9,14 @@ type Props = {
 };
 
 const ListItemGraph = ({ TickerSymbol, StockData }: Props) => {
+	const dispatch = useDispatch();
+
+	const SetStoreStock = (Ticker: string) => {
+		dispatch(setCurrentStoreStock(Ticker));
+	};
+
 	return (
-		<div className="ListItem">
+		<div className="ListItem" onClick={() => SetStoreStock(TickerSymbol)}>
 			<p>{TickerSymbol}</p>
 			<span>
 				<p>${StockData.c}</p>
