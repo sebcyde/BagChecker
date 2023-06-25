@@ -16,47 +16,43 @@ const NavTree = (props: Props) => {
 		<div className="NavTreeContainer">
 			<ul>
 				<li
-					className={
-						location.pathname == '/' || location.pathname == '/#/'
-							? 'active'
-							: ''
-					}
+					className={CurrentPage == '/' || CurrentPage == '/#/' ? 'active' : ''}
 					onClick={() => navigate('/')}
 				>
 					Home
 				</li>
 				<li
-					className={location.pathname == '/stocks' ? 'active' : ''}
+					className={CurrentPage == '/stocks' ? 'active' : ''}
 					onClick={() => navigate('/stocks')}
 				>
 					Stocks
 				</li>
 				<li
-					className={location.pathname == '/news' ? 'active' : ''}
+					className={CurrentPage == '/news' ? 'active' : ''}
 					onClick={() => navigate('/news')}
 				>
 					News
 				</li>
 				<li
-					className={location.pathname == '/people' ? 'active' : ''}
+					className={CurrentPage == '/people' ? 'active' : ''}
 					onClick={() => navigate('/people')}
 				>
 					People
 				</li>
 				<li
-					className={location.pathname == '/search' ? 'active' : ''}
+					className={CurrentPage == '/search' ? 'active' : ''}
 					onClick={() => navigate('/search')}
 				>
 					Search
 				</li>
 				<li
-					className={location.pathname == '/portfolio' ? 'active' : ''}
+					className={CurrentPage == '/portfolio' ? 'active' : ''}
 					onClick={() => navigate('/portfolio')}
 				>
 					Portfolio
 				</li>
 				<li
-					className={location.pathname == '/settings' ? 'active' : ''}
+					className={CurrentPage == '/settings' ? 'active' : ''}
 					onClick={() => navigate('/settings')}
 				>
 					Settings

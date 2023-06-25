@@ -1,0 +1,54 @@
+.PortfolioContainer {
+	background-color: whitesmoke;
+	padding: 20px 0px !important;
+	flex-direction: column;
+	display: flex;
+
+	.SectionsContainer {
+		justify-content: space-between;
+		flex-direction: row;
+		overflow: hidden;
+		display: flex;
+
+		.LeftSection {
+			height: fit-content;
+			min-width: 200px;
+			margin: 0px 10px;
+			overflow-y: auto;
+
+			.List {
+				background-color: whitesmoke;
+				border: 1px solid black;
+				height: fit-content;
+				margin-bottom: 10px;
+				padding: 10px;
+
+				&.active {
+					border: 1px solid green;
+				}
+
+				&:hover {
+					cursor: pointer;
+				}
+			}
+		}
+
+		.RightSection {
+			flex-direction: column;
+			margin-right: 10px;
+			overflow-y: auto;
+			display: flex;
+			flex: 1;
+
+			.ListItem {
+				border: 1px solid red;
+				margin-bottom: 10px;
+				padding: 10px;
+
+				&:hover {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
