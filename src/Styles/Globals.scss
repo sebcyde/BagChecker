@@ -2,14 +2,14 @@ html,
 body,
 #root {
 	font-family: 'Ysabeau SC', sans-serif;
-	background-color: gray;
+	background-color: $ItemBackgroundGray;
 	box-sizing: border-box;
+	overflow: hidden;
 	display: flex;
 	padding: 0px;
 	height: 100%;
 	margin: 0px;
 	width: 100%;
-	overflow: hidden;
 
 	> div {
 		overflow-y: auto;
