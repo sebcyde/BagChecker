@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { parsePercentages } from '../../Functions/Stocks/ParsePercentages';
 import { setCurrentStoreStock } from '../../Store/Slices/StockSlice';
 import { FHStockQuoteType } from '../../Types/Stocks/Finhhub';
+import { useNavigate } from 'react-router-dom';
 
 type Props = {
 	TickerSymbol: string;
@@ -10,9 +11,11 @@ type Props = {
 
 const ListItemGraph = ({ TickerSymbol, StockData }: Props) => {
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	const SetStoreStock = (Ticker: string) => {
 		dispatch(setCurrentStoreStock(Ticker));
+		navigate('/stocks');
 	};
 
 	return (

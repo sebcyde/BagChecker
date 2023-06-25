@@ -36,19 +36,18 @@ function App() {
 			<Routes>
 				{user ? (
 					<>
-						<Route path="/" element={<Dashboard />} />
-						<Route path="/loading" element={<LoadingScreen />} />
 						<Route path="/portfolio" element={<Portfolio />} />
-						<Route path="/people" element={<People />} />
-						<Route path="/news" element={<News />} />
-						<Route path="/search" element={<Search />} />
 						<Route path="/settings" element={<Settings />} />
+						<Route path="/people" element={<People />} />
+						<Route path="/search" element={<Search />} />
 						<Route path="/stocks" element={<Stocks />} />
+						<Route path="/" element={<Dashboard />} />
+						<Route path="/news" element={<News />} />
 					</>
 				) : (
 					<>
-						<Route path="/" element={<SignIn />} />
 						<Route path="signup" element={<SignUp />} />
+						<Route path="/" element={<SignIn />} />
 					</>
 				)}
 			</Routes>

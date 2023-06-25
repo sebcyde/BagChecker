@@ -1,12 +1,20 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setCurrentStoreStock } from '../../Store/Slices/StockSlice';
 
 type Props = {};
 
 const NavTree = (props: Props) => {
 	const [CurrentPage, setCurrentPage] = useState<string>('');
 	const navigate = useNavigate();
+	const dispatch = useDispatch();
 	const location = useLocation();
+
+	const ResetStoreCurrentStock = () => {
+		dispatch(setCurrentStoreStock(''));
+		navigate('/stocks');
+	};
 
 	useEffect(() => {
 		setCurrentPage(location.pathname);
@@ -16,14 +24,14 @@ const NavTree = (props: Props) => {
 		<div className="NavTreeContainer">
 			<ul>
 				<li
-					className={CurrentPage == '/' || CurrentPage == '/#/' ? 'active' : ''}
+					className={CurrentPage == '/' ? 'active' : ''}
 					onClick={() => navigate('/')}
 				>
 					Home
 				</li>
 				<li
 					className={CurrentPage == '/stocks' ? 'active' : ''}
-					onClick={() => navigate('/stocks')}
+					onClick={ResetStoreCurrentStock}
 				>
 					Stocks
 				</li>

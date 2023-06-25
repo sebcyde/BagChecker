@@ -29,7 +29,6 @@ const Portfolio = () => {
 		const allStockListItems: JSX.Element[] = [];
 		try {
 			for (const listItem of UserLists![CurrentItem]) {
-				console.log('Current List Item:', listItem);
 				const data = await GetTickerQuote(listItem);
 				allStockListItems.push(
 					<ListItemGraph TickerSymbol={listItem} StockData={data} />

@@ -6,7 +6,7 @@ export const GetUserLists = async (UID: string) => {
 	const ListsSnap = await getDoc(ListsRef);
 
 	if (ListsSnap.exists()) {
-		console.log('Document data:', ListsSnap.data());
+		console.log('User Lists:', ListsSnap.data());
 		return ListsSnap.data();
 	} else {
 		console.log('No such document!');
