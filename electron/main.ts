@@ -21,9 +21,11 @@ const VITE_DEV_SERVER_URL = process.env['VITE_DEV_SERVER_URL'];
 
 function createWindow() {
 	win = new BrowserWindow({
-		icon: path.join(process.env.PUBLIC, '/src/assets/LoadingSymbol.gif'),
+		icon: path.join(process.env.PUBLIC, '/public/icon.png'),
 		webPreferences: {
 			preload: path.join(__dirname, 'preload.js'),
+			contextIsolation: false,
+			nodeIntegration: true,
 		},
 	});
 

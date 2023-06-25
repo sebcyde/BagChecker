@@ -5,6 +5,7 @@ import { GetUserLists } from '../../Functions/Stocks/GetUserLists';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../Config/firebase';
 import { DocumentData } from 'firebase/firestore/lite';
+import ListItemGraph from '../../Components/Portfolio/ListItemGraph';
 
 type Props = {};
 
@@ -48,7 +49,13 @@ const Portfolio = (props: Props) => {
 						</div>
 						<div className="RightSection">
 							{UserLists![CurrentItem].map((ListItem: string) => {
-								return <div className="ListItem">{ListItem}</div>;
+								console.log(ListItem);
+								return (
+									<div className="ListItem">
+										<p>{ListItem}</p>
+										<ListItemGraph TickerSymbol={ListItem} />
+									</div>
+								);
 							})}
 						</div>
 					</div>
